@@ -1,9 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MegatronGriffin {
     private static final ToDoList list = new ToDoList();
+    private static int length = 0;
 
     public static void main(String[] args) {
         String start = "Uh… hi. It’s Meg. What do you want?\n";
@@ -21,6 +20,7 @@ public class MegatronGriffin {
 
             switch(command.toLowerCase()) {
                 case "list":
+                    System.out.println("I… I made a list of your tasks… don’t laugh or anything");
                     System.out.println(list.toString());
                     break;
                 case "mark":
@@ -39,10 +39,41 @@ public class MegatronGriffin {
                     System.out.println(str2);
                     break;
 
-                default:
-                    ToDoItem newItem = new ToDoItem(input, false);
+                case "deadline":
+                    String str3 = "Okay… I put it on the list. Happy now?\n";
+                    String[] split = argument.split("/by", 2);
+                    String taskName = split[0];
+                    String deadline = split[1];
+                    list.add(new DeadlineItem(taskName, deadline));
+                    System.out.println(str3);
+                    System.out.println(list.toString());
+                    list.increment();
+                    System.out.println(list.length());
+                    break;
+
+                case "event":
+                    String str4 = "Ugh, fine… I added the task, okay?";
+                    String[] spl = argument.split("/from", 2);
+                    String task = spl[0];
+                    String[] spl2 = spl[1].split("/to", 2);
+                    String from = spl2[0];
+                    String to = spl2[1];
+                    list.add(new EventItem(task, from, to));
+                    System.out.println(str4);
+                    System.out.println(list.toString());
+                    list.increment();
+                    System.out.println(list.length());
+                    break;
+
+                case "todo":
+                    ToDoItem newItem = new ToDoItem(argument, false);
                     list.add(newItem);
-                    System.out.println("added: " + input);
+                    System.out.println("Yeah, whatever… it’s on the list now.");
+                    System.out.println(list.toString());
+                    list.increment();
+                    System.out.println(list.length());
+                    break;
+
             }
             input = scanner.nextLine();
         }

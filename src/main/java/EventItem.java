@@ -1,4 +1,19 @@
-package PACKAGE_NAME;
+public class EventItem extends ToDoItem{
+    private String start;
+    private String end;
 
-public class EventItem {
+    public EventItem(String task, String start, String end) {
+        super(task, false);
+        this.start = start;
+        this.end = end;
+    }
+
+    @Override
+    public String toString() {
+        if (this.isDone()) {
+            return "[E][X] " + this.getTask() + " (from:" + this.start + "to:" + this.end + ")";
+        } else {
+            return "[E][ ] " + this.getTask() + " (from:" + this.start + "to:" + this.end + ")";
+        }
+    }
 }

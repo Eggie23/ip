@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ToDoList {
     private List<ToDoItem> list;
+    private int length;
 
     public ToDoList() {
         this.list = new ArrayList<ToDoItem>();
+        this.length = 0;
     }
 
     public void add(ToDoItem item) {
@@ -16,11 +19,19 @@ public class ToDoList {
         return this.list.get(i);
     }
 
+    public void increment() {
+        this.length++;
+    }
+
+    public String length() {
+        return "Great. " + this.length + " tasks. Like it even matters.";
+    }
+
     @Override
     public String toString() {
-        String str = "I… I made a list of your tasks… don’t laugh or anything.\n";
+       String str = "";
         for (int i = 0; i < list.size(); i++) {
-            str += String.format("%s. %s\n", i+1, list.get(i).toString());
+            str += String.format("%s. %s", i+1, list.get(i).toString());
         }
         return str;
     }

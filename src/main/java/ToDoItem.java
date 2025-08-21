@@ -22,9 +22,9 @@ public class ToDoItem {
     @Override
     public String toString() {
         if (done) {
-            return "[X] " + this.task;
+            return "[T][X] " + this.task;
         } else {
-            return "[] " + this.task;
+            return "[T][ ] " + this.task;
         }
     }
 }
