@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class MissingTaskNumberException extends InputException {
 
-public class MissingTaskNumberException {
+    public MissingTaskNumberException(String command) {
+        super("Seriously? You typed '" + command + "' but didn’t even say which task. Classic.");
+    }
 }

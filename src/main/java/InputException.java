@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class InputException extends Exception {
 
-public class InputException {
+    public InputException(String message) {
+        super(message);
+    }
 }
