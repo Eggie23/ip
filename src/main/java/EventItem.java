@@ -8,6 +8,12 @@ public class EventItem extends ToDoItem{
         this.end = end;
     }
 
+    public EventItem(String task, String start, String end, boolean isDone) {
+        super(task, isDone);
+        this.start = start;
+        this.end = end;
+    }
+
     @Override
     public String toString() {
         if (this.isDone()) {

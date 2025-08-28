@@ -6,6 +6,11 @@ public class DeadlineItem extends ToDoItem{
         this.dueBy = dueBy;
     }
 
+    public DeadlineItem(String task, String dueBy, boolean isDone) {
+        super(task, isDone);
+        this.dueBy = dueBy;
+    }
+
     @Override
     public String toString() {
         if (this.isDone()) {
