@@ -1,4 +1,4 @@
-package PACKAGE_NAME;
+package MegatronGriffin;
 
 public class ChatBot {
 }

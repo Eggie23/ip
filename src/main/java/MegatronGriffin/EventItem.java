@@ -1,4 +1,6 @@
-public class EventItem extends ToDoItem{
+package MegatronGriffin;
+
+public class EventItem extends ToDoItem {
     private String start;
     private String end;
 

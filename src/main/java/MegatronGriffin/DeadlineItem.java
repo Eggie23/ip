@@ -1,4 +1,6 @@
-public class DeadlineItem extends ToDoItem{
+package MegatronGriffin;
+
+public class DeadlineItem extends ToDoItem {
     private String dueBy;
 
     public DeadlineItem(String task, String dueBy){

@@ -1,3 +1,5 @@
+package MegatronGriffin;
+
 public class DateException extends InputException {
 
     public DateException(String message) {
