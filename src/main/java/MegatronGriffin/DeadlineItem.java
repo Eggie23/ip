@@ -1,14 +1,13 @@
 package MegatronGriffin;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class DeadlineItem extends ToDoItem {
-    private String dueBy;
+    private LocalDateTime dueBy;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy, h:mma");
 
-    public DeadlineItem(String task, String dueBy){
-        super(task, false);
-        this.dueBy = dueBy;
-    }
-
-    public DeadlineItem(String task, String dueBy, boolean isDone) {
+    public DeadlineItem(String task, LocalDateTime dueBy, boolean isDone) {
         super(task, isDone);
         this.dueBy = dueBy;
     }
@@ -16,9 +15,9 @@ public class DeadlineItem extends ToDoItem {
     @Override
     public String toString() {
         if (this.isDone()) {
-            return "[D][X] " + this.getTask() + "(by:" + this.dueBy +")";
+            return "[D][X] " + this.getTask() + "(by: " + this.dueBy.format(formatter) + ")";
         } else {
-            return "[D][ ] " + this.getTask() + "(by:" + this.dueBy +")";
+            return "[D][ ] " + this.getTask() + "(by:" + this.dueBy.format(formatter) +")";
         }
     }
 }

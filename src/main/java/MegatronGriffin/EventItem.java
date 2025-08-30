@@ -1,16 +1,15 @@
 package MegatronGriffin;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class EventItem extends ToDoItem {
-    private String start;
-    private String end;
+    private LocalDateTime start;
+    private LocalDateTime end;
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy, h:mma");
 
-    public EventItem(String task, String start, String end) {
-        super(task, false);
-        this.start = start;
-        this.end = end;
-    }
 
-    public EventItem(String task, String start, String end, boolean isDone) {
+    public EventItem(String task, LocalDateTime start, LocalDateTime end, boolean isDone) {
         super(task, isDone);
         this.start = start;
         this.end = end;
@@ -19,9 +18,9 @@ public class EventItem extends ToDoItem {
     @Override
     public String toString() {
         if (this.isDone()) {
-            return "[E][X] " + this.getTask() + " (from:" + this.start + "to:" + this.end + ")";
+            return "[E][X] " + this.getTask() + " (from: " + this.start.format(formatter) + " to:" + this.end.format(formatter) + ")";
         } else {
-            return "[E][ ] " + this.getTask() + " (from:" + this.start + "to:" + this.end + ")";
+            return "[E][ ] " + this.getTask() + " (from: " + this.start.format(formatter) + " to: " + this.end.format(formatter) + ")";
         }
     }
 }
