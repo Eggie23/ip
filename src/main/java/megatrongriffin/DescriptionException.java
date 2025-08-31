@@ -1,4 +1,4 @@
-package MegatronGriffin;
+package megatrongriffin;
 
 public class DescriptionException extends InputException {
     public DescriptionException(String message) {

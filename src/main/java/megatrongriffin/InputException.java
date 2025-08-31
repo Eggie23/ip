@@ -1,4 +1,4 @@
-package MegatronGriffin;
+package megatrongriffin;
 
 public class InputException extends Exception {
 
