@@ -121,6 +121,16 @@ public class ChatBot {
                 file.save(list);
                 break;
 
+            case "find":
+                System.out.println(argument);
+                if (argument.isEmpty()) {
+                    throw new MissingTaskNumberException(command);
+                }
+                System.out.println("Uh… here are the, uh… matching tasks… in your list…");
+                ToDoList searchResults = list.search(argument);
+                System.out.println(searchResults);
+                break;
+
             default:
                 throw new DescriptionException();
         }

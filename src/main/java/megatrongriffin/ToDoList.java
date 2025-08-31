@@ -73,4 +73,16 @@ public class ToDoList {
 
         return tasks;
     }
+
+    public ToDoList search(String s) {
+        ToDoList searchList = new ToDoList();
+        for (ToDoItem item: this.list) {
+            String description = item.getTask();
+            if (description.toLowerCase().contains(s.toLowerCase())) {
+                searchList.add(item);
+            }
+        }
+
+        return searchList;
+    }
 }
