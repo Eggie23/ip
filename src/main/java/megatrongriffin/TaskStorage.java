@@ -1,4 +1,4 @@
-package MegatronGriffin;
+package megatrongriffin;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -30,7 +30,6 @@ public class TaskStorage {
         ToDoList tasks = new ToDoList();
 
         try {
-
             Files.createDirectories(filePath.getParent());
 
             if (Files.notExists(filePath)) {
@@ -78,13 +77,10 @@ public class TaskStorage {
                         break;
                 }
             }
-
             return tasks;
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return tasks;
     }
 

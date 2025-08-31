@@ -1,4 +1,4 @@
-package MegatronGriffin;
+package megatrongriffin;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
