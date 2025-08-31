@@ -8,6 +8,13 @@ public class EventItem extends ToDoItem {
     private LocalDateTime end;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy, h:mma");
 
+    /**
+     * Constructor of EventItem
+     * @param task is a string, descrption of task
+     * @param start is a LocalDateTime object, dictates start time of event
+     * @param end is a LocalDateTime object, dictates end time of event
+     * @param isDone is a boolean, dictates whether event is done
+     */
 
     public EventItem(String task, LocalDateTime start, LocalDateTime end, boolean isDone) {
         super(task, isDone);

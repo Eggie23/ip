@@ -11,10 +11,21 @@ import java.util.List;
 public class TaskStorage {
     private final Path filePath;
 
+    /**
+     * Constructor of TaskStorage
+     * @param filePath is the filePath of tasks that is stored in hard disk's memory
+     */
     public TaskStorage(Path filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * Returns ToDoList that contains saved tasks from hard disk
+     * Reads from text file in hard disk with pre-saved tasks
+     * If the file does not exist, creates file and returns empty ToDoList
+     * Else, reads text in saved file and recreates tasks, appends to ToDoList
+      * @return
+     */
     public ToDoList load() {
         ToDoList tasks = new ToDoList();
 
@@ -77,6 +88,11 @@ public class TaskStorage {
         return tasks;
     }
 
+    /**
+     * Reads from ToDoList and writes into saved text file to store
+     * current tasks
+     * @param save
+     */
     public void save(ToDoList save) {
         List<String> lines = save.toSave();
         try {

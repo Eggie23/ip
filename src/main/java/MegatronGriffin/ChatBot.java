@@ -8,12 +8,23 @@ public class ChatBot {
     private TaskStorage file;
     private Scanner scanner;
 
+    /**
+     * Constructor for ChatBot class
+     * @param list Takes in a object of class ToDoList that will be updated
+     * @param file The file that new tasks will be written to
+     */
     public ChatBot(ToDoList list, TaskStorage file) {
         this.list = list;
         this.file = file;
         this.scanner = new Scanner(System.in);
     }
 
+    /**
+     * Continuously reads for command-line user input
+     * Terminates when the input is "bye"
+     * Continuously calls function handleCommand
+     * @throws InputException
+     */
     public void run() throws InputException {
         String input = scanner.nextLine();
 
