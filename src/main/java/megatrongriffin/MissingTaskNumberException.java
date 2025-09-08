@@ -1,3 +1,5 @@
+package megatrongriffin;
+
 public class MissingTaskNumberException extends InputException {
 
     public MissingTaskNumberException(String command) {

@@ -1,0 +1,5 @@
+[E][ ] sleep from      (from: 29 August 2025, 2:33AM to: 29 August 2025, 9:30AM)
+[T][ ] read book
+[T][ ] read book
+[T][ ] list
+[T][ ] list
