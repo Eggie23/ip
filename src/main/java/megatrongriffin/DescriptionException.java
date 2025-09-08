@@ -6,7 +6,7 @@ public class DescriptionException extends InputException {
     }
 
     public DescriptionException() {
-        super("Uh… yeah, I have no idea what that’s supposed to mean.");
+        super("Uh... yeah, I have no idea what that's supposed to mean.");
     }
 
 }
