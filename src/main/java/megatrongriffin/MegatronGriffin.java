@@ -8,24 +8,27 @@ import java.util.Scanner;
 
 public class MegatronGriffin {
     private static ToDoList list;
+    private ChatBot bot;
 
-    public static void main(String[] args) throws InputException {
-
-
-        String start = "Uh... hi. It's Meg. What do you want?\n";
-        String end = "Uh... see ya. Try not to forget I exist, I guess.";
-        System.out.println(start);
-
+    /**
+     * Constructor that initializes the ChatBot with file storage
+     */
+    public MegatronGriffin() throws InputException {
         Path filePath = Paths.get("data", "tasks.txt");
-
         TaskStorage file = new TaskStorage(filePath);
         list = (ToDoList) file.load();
+        this.bot = new ChatBot(list, file);
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    public String getResponse(String input) {
+        return bot.processCommand(input);
+    }
 
-        ChatBot bot = new ChatBot(list, file);
-        bot.run();
-        System.out.println(end);
+    public String getEndMessage() {
+        return "Uh... see ya. Try not to forget I exist, I guess.";
+    }
+
+    public static void main(String[] args) {
 
     }
 
