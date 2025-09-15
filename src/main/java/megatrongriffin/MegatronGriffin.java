@@ -18,6 +18,7 @@ public class MegatronGriffin {
         TaskStorage file = new TaskStorage(filePath);
         list = (ToDoList) file.load();
         this.bot = new ChatBot(list, file);
+        assert this.bot != null : "ChatBot is not instantiated properly";
     }
 
     public String getResponse(String input) {
