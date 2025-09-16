@@ -1,17 +1,17 @@
 package megatrongriffin;
 
 public class ToDoItem {
-    private boolean done;
+    private boolean isDone;
     private String task;
 
     /**
      * Constructor for ToDoItem
      * @param task the description of ToDoItem
-     * @param done if the task is completed or not
+     * @param isDone if the task is completed or not
      */
-    public ToDoItem(String task, boolean done) {
+    public ToDoItem(String task, boolean isDone) {
         this.task = task;
-        this.done = done;
+        this.isDone = isDone;
     }
 
     /**
@@ -19,15 +19,15 @@ public class ToDoItem {
      * @return
      */
     public boolean isDone() {
-        return this.done;
+        return this.isDone;
     }
 
     /**
      * Marks task as done
-     * @param done
+     * @param isDone
      */
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setDone(boolean isDone) {
+        this.isDone = isDone;
     }
 
     /**
@@ -40,7 +40,7 @@ public class ToDoItem {
 
     @Override
     public String toString() {
-        if (done) {
+        if (isDone) {
             return "[T][X] " + this.task;
         } else {
             return "[T][ ] " + this.task;
