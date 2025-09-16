@@ -17,6 +17,8 @@ public class ChatBot {
         this.list = list;
         this.file = file;
         this.scanner = new Scanner(System.in);
+        assert this.list != null : "list should not be null";
+        assert this.file != null : "file should not be null";
     }
 
     /**
