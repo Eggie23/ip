@@ -158,27 +158,36 @@ public class ChatBot {
             String argument = parts.length > 1 ? parts[1] : "";
 
             switch (command.toLowerCase()) {
+
+            case "l":
             case "list":
                 return processListCommand(list);
 
+            case "m":
             case "mark":
                 return processMarkCommand(list, argument, file, command);
 
+            case "u":
             case "unmark":
                 return processUnmarkCommand(list, argument, file, command);
 
+            case "dl":
             case "deadline":
                 return processDeadlineCommand(list, argument, file, command);
 
+            case "e":
             case "event":
                 return processEventCommand(list, argument, file, command);
 
+            case "t":
             case "todo":
                 return processToDoCommand(list, argument, file, command);
 
+            case "d":
             case "delete":
                 return processDeleteCommand(list, argument, file, command);
 
+            case "f":
             case "find":
                 return processFindCommand(list, argument, file, command);
 
