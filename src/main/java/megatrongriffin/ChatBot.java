@@ -36,6 +36,14 @@ public class ChatBot {
         }
     }
 
+    /**
+     * ChatGPT recommended to create a separate function for
+     * "file.save(list)" from all the commands.
+     */
+    private void saveList() {
+        file.save(list);
+    }
+
     private String processListCommand(ToDoList list) {
         StringBuilder response = new StringBuilder();
         response.append("I... I made a list of your tasks... don't laugh or anything\n");
@@ -51,7 +59,7 @@ public class ChatBot {
         item.setDone(true);
         StringBuilder response = new StringBuilder();
         response.append("Uh... okay... I marked it as done... I guess.\n").append(item);
-        file.save(list);
+        saveList();
         return response.toString();
     }
 
@@ -63,7 +71,7 @@ public class ChatBot {
         ToDoItem item2 = list.getItem(Integer.parseInt(argument));
         item2.setDone(false);
         response.append("Uh... okay... I marked it as not done... I guess.\n").append(item2);
-        file.save(list);
+        saveList();
         return response.toString();
     }
 
@@ -83,7 +91,7 @@ public class ChatBot {
         LocalDateTime deadline = LocalDateTime.parse(time, formatter);
 
         list.add(new DeadlineItem(taskName, deadline, false));
-        file.save(list);
+        saveList();
         response.append("Okay... I put it on the list. Happy now?\n\n");
         response.append(list.toString());
         return response.toString();
@@ -103,7 +111,7 @@ public class ChatBot {
                 DateTimeFormatter.ofPattern("d/M/yyyy HHmm"));
 
         list.add(new EventItem(task, fromTime, toTime, false));
-        file.save(list);
+        saveList();
         response.append("Ugh, fine... I added the task, okay?\n");
         response.append(list.toString());
         return response.toString();
@@ -116,7 +124,7 @@ public class ChatBot {
         }
         ToDoItem newItem = new ToDoItem(argument, false);
         list.add(newItem);
-        file.save(list);
+        saveList();
         response.append("Yeah, whatever... it's on the list now.\n");
         response.append(list.toString());
         return response.toString();
@@ -129,7 +137,7 @@ public class ChatBot {
         }
         response.append("Fine. I've removed this task completely:\n");
         response.append(list.delete(Integer.parseInt(argument)));
-        file.save(list);
+        saveList();
         return response.toString();
     }
 
