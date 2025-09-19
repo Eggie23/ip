@@ -7,7 +7,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
+/**
+ * Handles loading and saving of tasks to and from persistent storage.
+ * Manages file I/O operations for the to-do list data.
+ */
 public class TaskStorage {
     private final Path filePath;
 

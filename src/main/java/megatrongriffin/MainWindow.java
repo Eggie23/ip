@@ -24,6 +24,9 @@ public class MainWindow extends AnchorPane {
     private Image userImage = new Image(this.getClass().getResourceAsStream("/stewie.png"));
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/meg.png"));
 
+    /**
+     * Initializes the controller by binding scroll pane properties.
+     */
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
@@ -46,6 +49,18 @@ public class MainWindow extends AnchorPane {
                 DialogBox.getUserDialog(input, userImage),
                 DialogBox.getMegDialog(response, dukeImage)
         );
+
+        if (input.trim().toLowerCase().equals("bye")) {
+            // You can add a small delay to show the goodbye message
+            javafx.application.Platform.runLater(() -> {
+                try {
+                    Thread.sleep(1000); // 1 second delay to show goodbye message
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                javafx.application.Platform.exit();
+            });
+        }
         userInput.clear();
     }
 }

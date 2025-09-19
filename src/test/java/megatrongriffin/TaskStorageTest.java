@@ -8,11 +8,22 @@ import java.nio.file.Files;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for TaskStorage functionality.
+ * Tests the saving and loading of tasks to and from persistent storage.
+ */
+
 public class TaskStorageTest {
 
     private Path tempFile;
     private TaskStorage storage;
 
+    /**
+     * Sets up test environment before each test method.
+     * Creates a temporary file and TaskStorage instance for testing.
+     *
+     * @throws Exception if there is an error creating the temporary file
+     */
     @BeforeEach
     void setUp() throws Exception {
         tempFile = Files.createTempFile("tasks", ".txt");
@@ -21,6 +32,12 @@ public class TaskStorageTest {
         this.storage = new TaskStorage(tempFile);
     }
 
+    /**
+     * Tests the save and load functionality of TaskStorage.
+     * Verifies that tasks can be saved to and loaded from persistent storage correctly.
+     *
+     * @throws Exception if there is an error during file operations
+     */
     @Test
     void testSaveAndLoadTest() throws Exception {
         ToDoList list = new ToDoList();

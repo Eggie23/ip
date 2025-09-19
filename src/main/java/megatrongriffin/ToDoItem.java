@@ -1,5 +1,8 @@
 package megatrongriffin;
 
+/**
+ * Represents a basic to-do item with a task description and completion status.
+ */
 public class ToDoItem {
     private boolean isDone;
     private String task;

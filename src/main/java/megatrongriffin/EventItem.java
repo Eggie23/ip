@@ -3,6 +3,10 @@ package megatrongriffin;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a to-do item that occurs during a specific time period.
+ * Extends ToDoItem to include start and end times for events.
+ */
 public class EventItem extends ToDoItem {
     private LocalDateTime start;
     private LocalDateTime end;
@@ -25,13 +29,13 @@ public class EventItem extends ToDoItem {
     @Override
     public String toString() {
         if (this.isDone()) {
-            return "[E][X] " + this.getTask() +
-                    " (from: " + this.start.format(formatter) +
-                    " to:" + this.end.format(formatter) + ")";
+            return "[E][X] " + this.getTask()
+                    + " (from: " + this.start.format(formatter)
+                    + " to:" + this.end.format(formatter) + ")";
         } else {
-            return "[E][ ] " + this.getTask() +
-                    " (from: " + this.start.format(formatter) +
-                    " to: " + this.end.format(formatter) + ")";
+            return "[E][ ] " + this.getTask()
+                    + " (from: " + this.start.format(formatter)
+                    + " to: " + this.end.format(formatter) + ")";
         }
     }
 }

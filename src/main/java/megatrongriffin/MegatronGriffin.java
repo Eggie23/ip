@@ -2,10 +2,11 @@ package megatrongriffin;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Scanner;
 
-
-
+/**
+ * Main application class for the MegatronGriffin chatbot.
+ * Initializes the chatbot with file storage and provides methods for interaction.
+ */
 public class MegatronGriffin {
     private static ToDoList list;
     private ChatBot bot;
@@ -21,14 +22,21 @@ public class MegatronGriffin {
         assert this.bot != null : "ChatBot is not instantiated properly";
     }
 
+    /**
+     * Processes user input and returns the chatbot's response.
+     *
+     * @param input the user's command or message
+     * @return the chatbot's response as a string
+     */
     public String getResponse(String input) {
         return bot.processCommand(input);
     }
 
-    public String getEndMessage() {
-        return "Uh... see ya. Try not to forget I exist, I guess.";
-    }
-
+    /**
+     * Main method for running the application.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
 
     }

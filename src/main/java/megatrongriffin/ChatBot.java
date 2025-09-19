@@ -3,6 +3,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+/**
+ * Interactive chatbot for managing a to-do list.
+ * Handles user commands to add, modify, and query tasks with a sarcastic personality.
+ */
 public class ChatBot {
     private ToDoList list;
     private TaskStorage file;
@@ -34,6 +38,10 @@ public class ChatBot {
             handleCommand(input);
             input = scanner.nextLine();
         }
+    }
+
+    private String getEndMessage() {
+        return "Uh... see ya. Try not to forget I exist, I guess.";
     }
 
     /**
@@ -207,6 +215,8 @@ public class ChatBot {
             case "find":
                 return processFindCommand(list, argument, file, command);
 
+            case "bye":
+                return getEndMessage();
             default:
                 throw new DescriptionException();
             }

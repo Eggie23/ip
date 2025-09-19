@@ -3,6 +3,11 @@ package megatrongriffin;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Represents a to-do item with a deadline.
+ * Extends ToDoItem to include deadline functionality with date and time tracking.
+ */
+
 public class DeadlineItem extends ToDoItem {
     private LocalDateTime dueBy;
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMMM yyyy, h:mma");

@@ -14,6 +14,12 @@ public class Main extends Application {
 
     private MegatronGriffin meg;
 
+    /**
+     * Starts the JavaFX application and initializes the main window.
+     *
+     * @param stage the primary stage for the application
+     */
+
     @Override
     public void start(Stage stage) {
         stage.setTitle("Megatron Griffin");

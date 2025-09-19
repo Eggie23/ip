@@ -47,9 +47,25 @@ public class DialogBox extends HBox {
         setAlignment(Pos.TOP_LEFT);
     }
 
+    /**
+     * Creates a dialog box for user messages with default layout.
+     *
+     * @param text the message text to display
+     * @param img the user's profile image
+     * @return a DialogBox instance for the user
+     */
+
     public static DialogBox getUserDialog(String text, Image img) {
         return new DialogBox(text, img);
     }
+
+    /**
+     * Creates a dialog box for bot messages with flipped layout.
+     *
+     * @param text the message text to display
+     * @param img the bot's profile image
+     * @return a DialogBox instance for the bot with reversed layout
+     */
 
     public static DialogBox getMegDialog(String text, Image img) {
         var db = new DialogBox(text, img);
