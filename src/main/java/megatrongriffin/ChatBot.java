@@ -88,7 +88,12 @@ public class ChatBot {
         String taskName = split[0];
         String time = split[1].trim();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
-        LocalDateTime deadline = LocalDateTime.parse(time, formatter);
+        LocalDateTime deadline;
+        try {
+            deadline = LocalDateTime.parse(time, formatter);
+        } catch (java.time.format.DateTimeParseException e) {
+            throw new DateException(command);
+        }
 
         list.add(new DeadlineItem(taskName, deadline, false));
         saveList();
@@ -97,7 +102,7 @@ public class ChatBot {
         return response.toString();
     }
 
-    private String processEventCommand(ToDoList list, String argument, TaskStorage file, String command) throws DescriptionException {
+    private String processEventCommand(ToDoList list, String argument, TaskStorage file, String command) throws DescriptionException, DateException {
         StringBuilder response = new StringBuilder();
         if (argument.isEmpty()) {
             throw new DescriptionException(command);
@@ -105,6 +110,9 @@ public class ChatBot {
         String[] spl = argument.split("/from", 2);
         String task = spl[0];
         String[] spl2 = spl[1].split("/to", 2);
+        if (spl2[0].isEmpty() || spl2[1].isEmpty()) {
+            throw new DateException(command);
+        }
         LocalDateTime fromTime = LocalDateTime.parse(spl2[0].trim(),
                 DateTimeFormatter.ofPattern("d/M/yyyy HHmm"));
         LocalDateTime toTime = LocalDateTime.parse(spl2[1].trim(),

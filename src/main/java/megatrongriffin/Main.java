@@ -16,6 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
+        stage.setTitle("Megatron Griffin");
         try {
             meg = new MegatronGriffin();
 

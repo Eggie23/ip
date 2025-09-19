@@ -1,5 +1,2 @@
-[E][ ] sleep from      (from: 29 August 2025, 2:33AM to: 29 August 2025, 9:30AM)
-[T][ ] read book
-[T][ ] read book
-[T][ ] list
-[T][ ] list
+[D][ ] Finish iP for 2103T (by:19 September 2025, 11:59PM)
+[E][ ] study for 2103T  (from: 19 September 2025, 2:00PM to: 19 September 2025, 11:59PM)
